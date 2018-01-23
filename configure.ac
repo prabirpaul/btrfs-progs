@@ -1,5 +1,6 @@
 AC_INIT([btrfs-progs],
-	m4_esyscmd([./version.sh --configure]),
+	dnl Omit the trailing newline, so that m4_esyscmd can use the result directly
+	m4_esyscmd([cat VERSION | tr -d '\n']),
 	[linux-btrfs@vger.kernel.org],,
 	[http://btrfs.wiki.kernel.org])
 
